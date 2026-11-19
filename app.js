@@ -73,3 +73,35 @@ async function start() {
 start().catch(() => {
   resultCount.textContent = '目前無法載入作品，請重新整理頁面。';
 });
+
+async function showVisitorCount() {
+  const counter = document.querySelector('#visitor-counter');
+  const endpoint = counter.dataset.endpoint;
+  if (!endpoint) return;
+
+  const storageKey = 'yuyang-portfolio-visitor-id';
+  let request = {};
+  try {
+    const visitorId = localStorage.getItem(storageKey) || crypto.randomUUID();
+    localStorage.setItem(storageKey, visitorId);
+    request = { method: 'POST', body: visitorId };
+  } catch {
+    // Visitors with browser storage disabled can still read the total.
+  }
+
+  const response = await fetch(endpoint, {
+    ...request,
+    credentials: 'omit',
+    cache: 'no-store',
+    signal: AbortSignal.timeout(10000),
+  });
+  if (!response.ok) return;
+  const { count } = await response.json();
+  if (!Number.isSafeInteger(count) || count < 0) return;
+  document.querySelector('#visitor-total').textContent = new Intl.NumberFormat('zh-TW').format(count);
+  counter.hidden = false;
+}
+
+showVisitorCount().catch(() => {
+  // The portfolio remains usable when the counting service is unavailable.
+});

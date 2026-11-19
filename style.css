@@ -22,6 +22,8 @@ nav a { text-decoration: none; display: flex; align-items: center; justify-conte
 nav a:hover { background: #eef5f1; }
 nav a[aria-current] { color: #064b42; background: #ccece0; }
 nav a span { font-size: .875rem; }
+#visitor-counter { margin: 1.25rem .5rem 0; padding-top: .9rem; border-top: 1px solid var(--line); font-size: .875rem; color: #465d60; }
+#visitor-total { margin-inline-start: .35rem; color: var(--accent); font-variant-numeric: tabular-nums; }
 
 main { padding: clamp(1rem, 3.5vw, 3.5rem); width: 100%; max-width: 100rem; margin-inline: auto; }
 .toolbar { display: flex; justify-content: space-between; align-items: end; gap: 1rem; margin-bottom: 1.5rem; }
