@@ -18,6 +18,15 @@
     "image": "assets/02.jpg"
   },
   {
+    "id": 19,
+    "category": "games",
+    "title": "販賣機人 Vending Machine Operator",
+    "description": "扮演販賣機裡的人工核心，在限時內備妥冷熱飲、出貨並心算找零。",
+    "url": "https://ourfo.github.io/vending-machine-operator/",
+    "tag": "模擬遊戲",
+    "image": "assets/19.jpg"
+  },
+  {
     "id": 3,
     "category": "games",
     "title": "賽跑抽獎系統",
