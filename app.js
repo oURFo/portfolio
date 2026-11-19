@@ -57,7 +57,7 @@ async function start() {
       card.querySelector('h2').textContent = project.title;
       card.querySelector('p').textContent = project.description;
       open.href = project.url;
-      open.textContent = project.tag === 'Android' ? '前往 Google Play' : '開啟作品';
+      open.textContent = project.tag === 'Android' ? '前往 Google Play' : '前往';
       open.setAttribute('aria-label', open.textContent + '：' + project.title + '（在新分頁開啟）');
       return card;
     }));
