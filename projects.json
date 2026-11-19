@@ -6,7 +6,7 @@
     "description": "在泰山收費站值班，限時核對回數票、心算找零，並操作閘門放行。",
     "url": "https://ourfo.github.io/highway-toll-collector/",
     "tag": "模擬遊戲",
-    "image": "assets/21.jpg"
+    "image": "assets/21-cover.jpg"
   },
   {
     "id": 20,
@@ -42,7 +42,7 @@
     "description": "扮演販賣機裡的人工核心，在限時內備妥冷熱飲、出貨並心算找零。",
     "url": "https://ourfo.github.io/vending-machine-operator/",
     "tag": "模擬遊戲",
-    "image": "assets/19.jpg"
+    "image": "assets/19-cover.jpg"
   },
   {
     "id": 3,
