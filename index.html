@@ -18,18 +18,29 @@
     </p>
   </aside>
   <main id="content">
-    <header class="toolbar">
-      <div>
-        <h1 id="category-title">全部作品</h1>
-        <p id="result-count" role="status"></p>
-      </div>
-      <label class="search">
-        <span>搜尋作品</span>
-        <input type="search" id="search" placeholder="輸入名稱或關鍵字">
-      </label>
-    </header>
-    <div class="grid" id="projects"></div>
-    <noscript>請啟用 JavaScript 以瀏覽作品。</noscript>
+    <div id="catalog">
+      <header class="toolbar">
+        <div>
+          <h1 id="category-title" tabindex="-1">全部作品</h1>
+          <p id="result-count" role="status"></p>
+        </div>
+        <label class="search">
+          <span>搜尋作品</span>
+          <input type="search" id="search" placeholder="輸入名稱或關鍵字">
+        </label>
+      </header>
+      <div class="grid" id="projects"></div>
+      <noscript>請啟用 JavaScript 以瀏覽作品。</noscript>
+    </div>
+    <section id="project-viewer" aria-labelledby="viewer-title" hidden>
+      <header class="viewer-bar">
+        <a id="viewer-back" href="#all">返回作品</a>
+        <h1 id="viewer-title"></h1>
+        <a id="viewer-external" target="_blank" rel="noopener noreferrer">新分頁開啟</a>
+      </header>
+      <p id="viewer-message" role="status" hidden></p>
+      <div id="viewer-frame"></div>
+    </section>
     <template id="project-template">
       <article class="card">
         <img class="cover" alt="" width="1280" height="720" decoding="async">

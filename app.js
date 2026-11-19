@@ -12,6 +12,13 @@ const title = document.querySelector('#category-title');
 const resultCount = document.querySelector('#result-count');
 const grid = document.querySelector('#projects');
 const template = document.querySelector('#project-template');
+const catalog = document.querySelector('#catalog');
+const viewer = document.querySelector('#project-viewer');
+const viewerBack = document.querySelector('#viewer-back');
+const viewerTitle = document.querySelector('#viewer-title');
+const viewerExternal = document.querySelector('#viewer-external');
+const viewerMessage = document.querySelector('#viewer-message');
+const viewerFrame = document.querySelector('#viewer-frame');
 
 async function start() {
   const response = await fetch('./projects.json');
@@ -29,8 +36,10 @@ async function start() {
   }
 
   function render() {
-    const hash = location.hash.slice(1);
+    const [hash, projectId] = location.hash.slice(1).split('/');
     const category = categories.has(hash) ? hash : 'all';
+    const activeProject = projects.find(item => String(item.id) === projectId && item.tag !== 'Android');
+    const wasViewing = !viewer.hidden;
     const words = search.value.trim().toLowerCase().split(/\s+/).filter(Boolean);
     const results = projects.filter(project => {
       const text = [project.title, project.description, project.tag, categories.get(project.category)]
@@ -45,6 +54,33 @@ async function start() {
       else link.removeAttribute('aria-current');
     }
 
+    viewer.hidden = !activeProject;
+    catalog.hidden = Boolean(activeProject);
+    document.body.classList.toggle('viewing-project', Boolean(activeProject));
+    if (activeProject) {
+      viewerBack.href = '#' + category;
+      viewerTitle.textContent = activeProject.title;
+      viewerExternal.href = activeProject.url;
+      viewerMessage.hidden = !activeProject.embedMessage;
+      viewerMessage.textContent = activeProject.embedMessage || '';
+      if (viewerFrame.dataset.projectId !== projectId) {
+        viewerFrame.replaceChildren();
+        viewerFrame.dataset.projectId = projectId;
+        if (!activeProject.embedMessage) {
+          const frame = document.createElement('iframe');
+          frame.src = activeProject.url;
+          frame.title = activeProject.title;
+          frame.allow = 'fullscreen; autoplay; microphone';
+          viewerFrame.append(frame);
+        }
+        window.scrollTo(0, 0);
+        viewerBack.focus({ preventScroll: true });
+      }
+      return;
+    }
+
+    viewerFrame.replaceChildren();
+    delete viewerFrame.dataset.projectId;
     resultCount.textContent = results.length ? `${results.length} 件作品` : '找不到符合的作品';
     grid.replaceChildren(...results.map((project, index) => {
       const card = template.content.cloneNode(true);
@@ -56,14 +92,22 @@ async function start() {
       card.querySelector('.tag').textContent = project.tag;
       card.querySelector('h2').textContent = project.title;
       card.querySelector('p').textContent = project.description;
-      open.href = project.url;
-      open.textContent = project.tag === 'Android' ? '前往 Google Play' : '前往';
-      open.setAttribute('aria-label', open.textContent + '：' + project.title + '（在新分頁開啟）');
+      const isAndroid = project.tag === 'Android';
+      open.href = isAndroid ? project.url : '#' + category + '/' + project.id;
+      if (!isAndroid) open.removeAttribute('target');
+      open.textContent = isAndroid ? '前往 Google Play' : '前往';
+      open.setAttribute('aria-label', open.textContent + '：' + project.title + (isAndroid ? '（在新分頁開啟）' : ''));
       return card;
     }));
+    if (wasViewing) title.focus({ preventScroll: true });
   }
 
   search.addEventListener('input', render);
+  viewerBack.addEventListener('click', event => {
+    if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    location.replace(viewerBack.hash);
+  });
   window.addEventListener('hashchange', () => {
     if (location.hash !== '#content') render();
   });

@@ -168,6 +168,7 @@
     "description": "提供競速、複習與排行榜入口。",
     "url": "https://script.google.com/macros/s/AKfycbyh9wwqbOO_M6EvL9hx4jXZXe6cwT2ItjRmmtW5zZkSYpJXTuvF-kP0B6t6ywWZKVM/exec?pli=1",
     "tag": "需登入 Google",
+    "embedMessage": "這個作品需要登入 Google。請選擇「新分頁開啟」前往原站。",
     "image": "assets/16.png"
   },
   {
