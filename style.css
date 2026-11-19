@@ -48,7 +48,18 @@ h1 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.15; margin: 0; letter-spa
 .viewing-project main { height: 100%; min-height: 0; padding: 0; max-width: none; }
 #project-viewer:not([hidden]) { display: flex; flex-direction: column; height: 100%; }
 .viewer-bar { display: flex; align-items: center; gap: .6rem; padding: .4rem .65rem; background: white; border-bottom: 1px solid var(--line); }
-.viewer-bar a { display: inline-flex; align-items: center; min-height: 2.75rem; padding-inline: .55rem; white-space: nowrap; color: var(--accent); font-size: .875rem; font-weight: 650; }
+.viewer-bar a, #viewer-expand:not([hidden]) { display: inline-flex; align-items: center; min-height: 2.75rem; padding-inline: .55rem; white-space: nowrap; color: var(--accent); font-size: .875rem; font-weight: 650; }
+#viewer-expand { border: 1px solid var(--line); border-radius: .45rem; background: white; font-family: inherit; cursor: pointer; }
+#viewer-expand:focus-visible { outline: 3px solid #167f6d; outline-offset: 2px; }
+#project-viewer.expanded-viewer:not([hidden]), #project-viewer:fullscreen {
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+  width: 100%;
+  height: var(--visible-height, 100dvh);
+  background: #fff;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
 .viewer-bar h1 { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 1rem; letter-spacing: normal; }
 #viewer-message { margin: 1rem; line-height: 1.6; }
 #viewer-frame { flex: 1; min-height: 0; }
@@ -62,6 +73,10 @@ h1 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.15; margin: 0; letter-spa
 @media (max-width: 730px) {
   body { display: block; }
   .viewing-project .sidebar { display: none; }
+  #project-viewer:not([hidden]) {
+    height: var(--visible-height, 100dvh);
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  }
   .viewer-bar { gap: .25rem; padding-inline: .25rem; }
   .sidebar { position: static; min-height: 0; padding: .8rem 1rem; border-right: 0; border-bottom: 1px solid var(--line); }
   .brand { margin: 0 0 .75rem; font-size: 1.25rem; }

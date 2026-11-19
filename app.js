@@ -19,6 +19,39 @@ const viewerTitle = document.querySelector('#viewer-title');
 const viewerExternal = document.querySelector('#viewer-external');
 const viewerMessage = document.querySelector('#viewer-message');
 const viewerFrame = document.querySelector('#viewer-frame');
+const viewerExpand = document.querySelector('#viewer-expand');
+
+function fitViewer() {
+  const height = window.visualViewport?.height ?? window.innerHeight;
+  viewer.style.setProperty('--visible-height', Math.floor(height) + 'px');
+}
+
+function updateExpandedState() {
+  const expanded = document.fullscreenElement === viewer || viewer.classList.contains('expanded-viewer');
+  viewerExpand.textContent = expanded ? '退出全螢幕' : '全螢幕';
+  viewerExpand.setAttribute('aria-pressed', String(expanded));
+  fitViewer();
+}
+
+viewerExpand.addEventListener('click', async () => {
+  if (document.fullscreenElement === viewer) {
+    await document.exitFullscreen();
+  } else if (viewer.classList.contains('expanded-viewer')) {
+    viewer.classList.remove('expanded-viewer');
+  } else {
+    try {
+      if (!document.fullscreenEnabled || !viewer.requestFullscreen) throw new Error('Fullscreen unavailable');
+      await viewer.requestFullscreen();
+    } catch {
+      viewer.classList.add('expanded-viewer');
+    }
+  }
+  updateExpandedState();
+});
+
+document.addEventListener('fullscreenchange', updateExpandedState);
+window.addEventListener('resize', fitViewer);
+window.visualViewport?.addEventListener('resize', fitViewer);
 
 async function start() {
   const response = await fetch('./projects.json');
@@ -61,6 +94,8 @@ async function start() {
       viewerBack.href = '#' + category;
       viewerTitle.textContent = activeProject.title;
       viewerExternal.href = activeProject.url;
+      viewerExpand.hidden = Boolean(activeProject.embedMessage);
+      fitViewer();
       viewerMessage.hidden = !activeProject.embedMessage;
       viewerMessage.textContent = activeProject.embedMessage || '';
       if (viewerFrame.dataset.projectId !== projectId) {
@@ -80,6 +115,9 @@ async function start() {
     }
 
     viewerFrame.replaceChildren();
+    viewer.classList.remove('expanded-viewer');
+    if (document.fullscreenElement === viewer) document.exitFullscreen().catch(() => {});
+    updateExpandedState();
     delete viewerFrame.dataset.projectId;
     resultCount.textContent = results.length ? `${results.length} 件作品` : '找不到符合的作品';
     grid.replaceChildren(...results.map((project, index) => {
