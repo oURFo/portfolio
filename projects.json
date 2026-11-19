@@ -1,5 +1,14 @@
 [
   {
+    "id": 21,
+    "category": "games",
+    "title": "國道收費員 Highway Toll Collector",
+    "description": "在泰山收費站值班，限時核對回數票、心算找零，並操作閘門放行。",
+    "url": "https://ourfo.github.io/highway-toll-collector/",
+    "tag": "模擬遊戲",
+    "image": "assets/21.jpg"
+  },
+  {
     "id": 20,
     "category": "games",
     "title": "末路三十日 · LAST ROAD",
