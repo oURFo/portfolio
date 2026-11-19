@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="瀏覽遊戲、生活工具、學習資源與 EMT 作品。">
+  <title>作品集</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#content">跳至作品</a>
+  <aside class="sidebar">
+    <a class="brand" href="#all"><span aria-hidden="true">✦</span> 作品集</a>
+    <nav id="categories" aria-label="作品分類"></nav>
+  </aside>
+  <main id="content">
+    <header class="toolbar">
+      <div>
+        <h1 id="category-title">全部作品</h1>
+        <p id="result-count" role="status"></p>
+      </div>
+      <label class="search">
+        <span>搜尋作品</span>
+        <input type="search" id="search" placeholder="輸入名稱或關鍵字">
+      </label>
+    </header>
+    <div class="grid" id="projects"></div>
+    <noscript>請啟用 JavaScript 以瀏覽作品。</noscript>
+    <template id="project-template">
+      <article class="card">
+        <img class="cover" alt="" width="1280" height="720" decoding="async">
+        <div class="details">
+          <span class="tag"></span>
+          <h2></h2>
+          <p></p>
+          <a class="open" target="_blank" rel="noopener noreferrer"></a>
+        </div>
+      </article>
+    </template>
+  </main>
+</body>
+</html>

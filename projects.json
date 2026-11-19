@@ -1,0 +1,164 @@
+[
+  {
+    "id": 1,
+    "category": "games",
+    "title": "聖誕樹佈置 · 溫馨童話夜",
+    "description": "在童話夜裡佈置聖誕樹，搭配飾品與大型裝置。",
+    "url": "https://ourfo.github.io/christmas-tree-park/",
+    "tag": "遊戲",
+    "image": "assets/01.jpg"
+  },
+  {
+    "id": 2,
+    "category": "games",
+    "title": "ATM人 (ATM Operator)",
+    "description": "扮演提款機操作員，在限時內處理提款需求。",
+    "url": "https://ourfo.github.io/atm-operator/",
+    "tag": "模擬遊戲",
+    "image": "assets/02.jpg"
+  },
+  {
+    "id": 3,
+    "category": "games",
+    "title": "賽跑抽獎系統",
+    "description": "設定參與人數，用賽跑畫面呈現抽獎。",
+    "url": "https://ourfo.github.io/race-lottery/",
+    "tag": "互動抽獎",
+    "image": "assets/03.jpg"
+  },
+  {
+    "id": 4,
+    "category": "games",
+    "title": "歡樂遊樂場 · FANTASY ARCADE",
+    "description": "走進互動遊樂場，探索不同的遊戲機台。",
+    "url": "https://ourfo.github.io/fantasy-essence-pusher/#lobby",
+    "tag": "遊戲",
+    "image": "assets/04.jpg"
+  },
+  {
+    "id": 6,
+    "category": "games",
+    "title": "上班打打打｜今日壓力，今日清空",
+    "description": "選擇道具，在虛擬辦公室揮掉上班壓力。",
+    "url": "https://ourfo.github.io/office-smash/",
+    "tag": "遊戲",
+    "image": "assets/06.jpg"
+  },
+  {
+    "id": 5,
+    "category": "life",
+    "title": "智慧冰箱管家",
+    "description": "依冰箱分區管理食材與到期日。",
+    "url": "https://ourfo.github.io/fridge-tracker/",
+    "tag": "生活工具",
+    "image": "assets/05.jpg"
+  },
+  {
+    "id": 8,
+    "category": "life",
+    "title": "東亞颱風監測",
+    "description": "查看東亞颱風動態、路徑與航班狀態。",
+    "url": "https://typhoon-monitor.onrender.com/",
+    "tag": "資訊工具",
+    "image": "assets/08.jpg"
+  },
+  {
+    "id": 12,
+    "category": "life",
+    "title": "輕鬆旅遊",
+    "description": "規劃旅遊行程，並分享給同行旅伴。",
+    "url": "https://play.google.com/store/apps/details?id=com.yuyang.traveleasily",
+    "tag": "Android",
+    "image": "assets/12.jpg"
+  },
+  {
+    "id": 9,
+    "category": "learn",
+    "title": "花圃數學園 🌸",
+    "description": "依年級選擇國小數學學習內容。",
+    "url": "https://ourfo.github.io/Elementary_Mathematics",
+    "tag": "數學",
+    "image": "assets/09.jpg"
+  },
+  {
+    "id": 10,
+    "category": "learn",
+    "title": "虛擬小說產生器",
+    "description": "從一段故事起點展開 AI 協作的 RPG 小說。",
+    "url": "https://ourfo.github.io/Genesis_Novel/",
+    "tag": "AI 創作",
+    "image": "assets/10.jpg"
+  },
+  {
+    "id": 11,
+    "category": "learn",
+    "title": "旅遊日文學習",
+    "description": "練習五十音、旅遊詞彙與情境會話。",
+    "url": "https://ourfo.github.io/JapaneseForTourism/",
+    "tag": "語言學習",
+    "image": "assets/11.jpg"
+  },
+  {
+    "id": 7,
+    "category": "emt",
+    "title": "EMT：黃金救援",
+    "description": "從不同難度的派遣案例練習救護情境。",
+    "url": "https://ourfo.github.io/EMT1Game/",
+    "tag": "情境模擬",
+    "image": "assets/07.jpg"
+  },
+  {
+    "id": 13,
+    "category": "emt",
+    "title": "病狀評估 App",
+    "description": "瀏覽病狀表現，進行評估與測驗練習。",
+    "url": "https://script.google.com/macros/s/AKfycbxx9tksNR8FNiQX4fxWq4HuAyy3os1JTEj_rdZ7aSRxqwRXgd-OgI7sMYhDoXf8-H-GJg/exec",
+    "tag": "學習工具",
+    "image": "assets/13.jpg"
+  },
+  {
+    "id": 14,
+    "category": "emt",
+    "title": "燒燙傷急救小幫手",
+    "description": "學習燒燙傷分級與九分法，並進行隨堂測驗。",
+    "url": "https://ourfo.github.io/tbsa9/",
+    "tag": "學習工具",
+    "image": "assets/14.jpg"
+  },
+  {
+    "id": 15,
+    "category": "emt",
+    "title": "急救檢傷分類練習",
+    "description": "練習急救檢傷判斷並複習危急個案。",
+    "url": "https://ourfo.github.io/Critically_ill_patients/",
+    "tag": "測驗",
+    "image": "assets/15.jpg"
+  },
+  {
+    "id": 16,
+    "category": "emt",
+    "title": "EMT 大腦競速",
+    "description": "提供競速、複習與排行榜入口。",
+    "url": "https://script.google.com/macros/s/AKfycbyh9wwqbOO_M6EvL9hx4jXZXe6cwT2ItjRmmtW5zZkSYpJXTuvF-kP0B6t6ywWZKVM/exec?pli=1",
+    "tag": "需登入 Google",
+    "image": "assets/16.png"
+  },
+  {
+    "id": 17,
+    "category": "emt",
+    "title": "AED 模擬訓練機",
+    "description": "以互動介面操作模擬 AED 與主手 CPR。",
+    "url": "https://script.google.com/macros/s/AKfycbyLabhxRRm6w6pdU3_vhUkjkE-sa3ETZhHDEQzqnNGaFJ2VlRPGxubOcXB6Nme_cZ-zNQ/exec",
+    "tag": "操作模擬",
+    "image": "assets/17.jpg"
+  },
+  {
+    "id": 18,
+    "category": "emt",
+    "title": "EMT-1 救護GO",
+    "description": "從學習卡、知識卡、測試與 GCS 評估入口複習。",
+    "url": "https://ourfo.github.io/EMT1.learnsomething/",
+    "tag": "學習工具",
+    "image": "assets/18.jpg"
+  }
+]
