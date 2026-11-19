@@ -78,6 +78,8 @@ h1 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.15; margin: 0; letter-spa
     padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
   }
   .viewer-bar { gap: .25rem; padding-inline: .25rem; }
+  .viewer-bar h1 { position: absolute; width: 1px; height: 1px; clip-path: inset(50%); }
+  #viewer-expand:not([hidden]) { margin-inline-start: auto; color: white; background: var(--accent); }
   .sidebar { position: static; min-height: 0; padding: .8rem 1rem; border-right: 0; border-bottom: 1px solid var(--line); }
   .brand { margin: 0 0 .75rem; font-size: 1.25rem; }
   nav { display: flex; flex-wrap: wrap; }
