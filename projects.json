@@ -81,6 +81,15 @@
     "image": "assets/06.jpg"
   },
   {
+    "id": 23,
+    "category": "life",
+    "title": "光訊號｜行動警示與摩斯碼",
+    "description": "提供螢幕警示、SOS 手電筒與摩斯碼發送，並可試用光學摩斯碼接收。",
+    "url": "https://ourfo.github.io/optical-signal/",
+    "tag": "生活工具",
+    "image": "assets/23.jpg"
+  },
+  {
     "id": 5,
     "category": "life",
     "title": "智慧冰箱管家",
