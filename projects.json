@@ -1,5 +1,14 @@
 [
   {
+    "id": 24,
+    "category": "games",
+    "title": "沒預料到我今天渡劫",
+    "description": "在雷陣中閃避天雷，抓準空檔打坐聚靈，撐不住時就踏出雷陣。",
+    "url": "https://ourfo.github.io/unexpected-tribulation/",
+    "tag": "動作遊戲",
+    "image": "assets/24.jpg"
+  },
+  {
     "id": 22,
     "category": "games",
     "title": "輪椅駕駛證",
