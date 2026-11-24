@@ -126,6 +126,15 @@
     "image": "assets/12.jpg"
   },
   {
+    "id": 25,
+    "category": "learn",
+    "title": "愛麗絲的奇境茶會",
+    "description": "展開 14 天的奇境旅程，透過每日關卡練習專注力，並查看練習紀錄。",
+    "url": "https://ourfo.github.io/alice-wonderland-focus/",
+    "tag": "專注力練習",
+    "image": "assets/25.jpg"
+  },
+  {
     "id": 9,
     "category": "learn",
     "title": "花圃數學園 🌸",
