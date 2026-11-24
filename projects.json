@@ -1,5 +1,14 @@
 [
   {
+    "id": 26,
+    "category": "games",
+    "title": "散步企鵝 · Strolling Penguin",
+    "description": "帶著企鵝在雪原散步，呼喚落單的動物加入隊伍，挑戰最多夥伴紀錄。",
+    "url": "https://ourfo.github.io/strolling-penguin/",
+    "tag": "休閒遊戲",
+    "image": "assets/26.jpg"
+  },
+  {
     "id": 24,
     "category": "games",
     "title": "沒預料到我今天渡劫",
